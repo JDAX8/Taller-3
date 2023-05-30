@@ -5,7 +5,7 @@ import psbdata from "../../mocks/psb";
 import trips from "../../mocks/trips";
 import sgfydata from "../../mocks/usdata";
 import unphdata from "../../mocks/phonedata";
-import Trips from "../../services/fetch"
+import Trips from "../../services/fetch";
 
 
 
