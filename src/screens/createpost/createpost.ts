@@ -1,4 +1,4 @@
-import styles from "./register.css"
+import styles from "./createpost.css"
 import  { att } from "../../components/btnregis/buttonregis";
 import "../../components/export"
 import { dispatch } from "../../store/index";
