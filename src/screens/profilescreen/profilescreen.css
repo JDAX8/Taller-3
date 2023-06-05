@@ -1,8 +1,10 @@
 
-.cards{
-  position: fixed;
+.feat{
+    position: fixed;
+    height: 100%;
+    border-right: 0.0625em solid  #e6ecf0;
+    width: 25%;
 }
-
 
 h1{
     font-size: 260%;
