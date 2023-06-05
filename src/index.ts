@@ -6,6 +6,7 @@ import "./screens/profilescreen/profilescreen"
 import "./screens/Form/index"
 import "./screens/Register/form2"
 import "./screens/landing/landing"
+import "./screens/Create Post/createpost"
 import { addObserver, appState } from "./store/index"
 import { Screens } from "./types/navigations"
 
@@ -62,6 +63,9 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(register);
 
                 break;
+                case Screens.SHARE:
+                const share = this.ownerDocument.createElement('app-post');
+                this.shadowRoot?.appendChild(share);
         
             default:
                 break;

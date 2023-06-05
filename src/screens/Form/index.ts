@@ -57,61 +57,32 @@ export class FormLog extends HTMLElement {
                 container.appendChild(logo)
 
 
-                pdata.forEach((dat) => {
-                    const buttonsess = this.ownerDocument.createElement("btn-sec");          
-                    buttonsess.setAttribute(Attribut.name, dat.name)
-                    container.appendChild(buttonsess)
-                })
-
-
-                const ema = this.ownerDocument.createElement("h4")
-                ema.innerText = "Email"
-                container.appendChild(ema)
-                
+                // pdata.forEach((dat) => {
+                //     const buttonsess = this.ownerDocument.createElement("btn-sec");          
+                //     buttonsess.setAttribute(Attribut.name, dat.name)
+                //     container.appendChild(buttonsess)
+                // })
+      
                 const email = this.ownerDocument.createElement("email-pass")
-                email.setAttribute(attr.placeholder, "email")
-                email.setAttribute(attr.type, "email")
-                container.appendChild(email)
-
-                const pass = this.ownerDocument.createElement("h4")
-                pass.innerText = "Password"
-                container.appendChild(pass)
                 
-
-                const password = this.ownerDocument.createElement("email-pass")
-                password.setAttribute(attr.placeholder, "Password")
-                password.setAttribute(attr.type, "password")
-                container.appendChild(password)
-
-            
+                container.appendChild(email)
+                
                 const sec = this.ownerDocument.createElement("section")
                 sec.className = "section2"
                 this.shadowRoot?.appendChild(containerg)
-                const button = this.ownerDocument.createElement("my-butlogin");
-                button.className = "btn"
-                button.addEventListener("click", () =>{
-                    button.className="btn-signup"
-                   dispatch(navigate(Screens.DASHBOARD))
-                } )
-                container.appendChild(button)
 
                 containerg.appendChild(sec)
 
-                
-                
                 const banner = this.ownerDocument.createElement("img")
                 banner.src="../../../src/pics/BannerLogin.png"
                 banner.className = "banner"
                 sec.appendChild(banner)
 
-
-
                  const Notregis = this.ownerDocument.createElement("h5")
                  Notregis.innerText = "Not registered yet?"
                  Notregis.className = "Notregis"
                  container.appendChild(Notregis)
-                 
- 
+
                  const Notaccount = this.ownerDocument.createElement("h5")
                  Notaccount.innerText = "Create an Account"
                  Notaccount.className = "Notaccount"

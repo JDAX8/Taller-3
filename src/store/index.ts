@@ -1,11 +1,31 @@
 
+import { onAuthStateChanged } from "firebase/auth";
 import { Screens } from "../types/navigations"
 import { Observer } from "../types/store";
 import { reducer } from "./reducer";
+import { auth } from "../utils/firebase";
+import { navigate, setUserCredentials } from "./action";
 
 const emptyState = {
     screen: Screens.LANDING,
+    user: {
+      uid: "",
+      username: "",
+      email: "",
+      image: "",
+    },
+    post:[],
+    users: [],
   };
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
+      dispatch(navigate(Screens.DASHBOARD));
+    } else {
+      dispatch(navigate(Screens.LANDING));
+    }
+  });
+  
   
   export let appState = emptyState;
   
