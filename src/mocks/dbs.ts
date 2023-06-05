@@ -7,7 +7,7 @@ const dbsdata: DataDB[] = [
         
     },
     {
-        icon: "../../src/pics/message.png",
+        icon: "../../src/pics/upload.png",
         title: "Message",
         
     },

@@ -1,0 +1,61 @@
+.section1{
+    background: linear-gradient(#A11FC1ff, #231843ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width:80vw ;
+    height: 44.8vw ;
+    border-radius: 8px;    
+}
+
+h1{
+    font-size: 55px;
+    margin-left: -40%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 300%;
+}
+
+.img{
+    position: absolute;
+    width: 10%;
+    margin-left: 30%;
+    margin-top: 2%;
+
+}
+.banner{
+    width:48vw ;
+    height: 44.8vw ; 
+}
+
+.big{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+.containerg{
+    font-family: 'Fjalla One', sans-serif;
+}
+@media only screen and (max-width: 768px) {
+    .section1{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 2em;
+        margin-left: -20%;
+    }
+
+    .img{
+        width: 20%;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+
+    .banner{
+        width: 80vw;
+    }
+    .section2{
+        display: none;
+    }
+}

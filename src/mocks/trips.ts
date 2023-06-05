@@ -20,7 +20,7 @@ const trips: trip[]=[
                     userimage: 'https://media.vandalsports.com/master/11-2022/20221129121716_1.jpg',
                     ptitle: 'My First Day as Spider-Man',
                     ptext: 'I just became Spider-Man and I can\'t believe it! It\'s been a crazy day of fighting bad guys and swinging through the city, but I think I\'m getting the hang of it. Here are some photos from my first day on the job!',
-                    postimage: 'https://cdn2.unrealengine.com/egs-valorant-riotgames-g1a-10-1920x1080-c198f4de38d5.jpg?h=720&quality=medium&resize=1&w=1280'
+                    postimage: 'https://dotesports.com/es/wp-content/uploads/sites/4/2020/04/04114045/valorant-screenshot-1.jpg?w=1200'
                 },
                 {
                     username: 'maryjane12',

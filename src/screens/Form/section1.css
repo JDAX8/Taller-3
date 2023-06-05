@@ -1,0 +1,81 @@
+.section1{
+    background: linear-gradient(#A11FC1ff, #231843ff);
+    border-radius: 8px;
+    margin-top: -0.5%;
+    max-width: 50%;
+    min-width: 50%;
+    max-height: 1%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+h1{
+    color: white;
+    font-size: 54px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 300%;
+}
+
+h2{
+    color: white;
+    margin-top: -1%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 200%;
+}
+
+h4{
+    color: white;
+    font-size: 20px;
+}
+
+
+     
+ .Notregis{
+    color: white;
+ }
+
+ .Notaccount{
+    color: #06F82C;
+
+ }
+
+ .logo{
+    position: absolute;
+    width: 9%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30% ;
+
+}
+
+
+.big{
+    display: flex;
+    flex-direction: row;
+}
+  
+.section2{
+
+    margin-top: -0.5%;
+    max-height: 10%;
+}
+
+.banner{
+    height: 100%;
+    width: 100%;
+    margin-left: -1%;  
+}
+h5{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+h4{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 150%;
+}
+.Notaccount:hover{
+    cursor: pointer;
+}

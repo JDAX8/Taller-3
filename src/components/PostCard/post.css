@@ -20,7 +20,7 @@ body {
   font-family: 'Fjalla One', sans-serif;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 400px) {
   .post-container {
     max-width: 50em;
   }

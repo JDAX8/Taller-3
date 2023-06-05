@@ -1,0 +1,96 @@
+
+.cards{
+  position: fixed;
+}
+
+
+h1{
+    font-size: 260%;
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+}
+
+.main{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -100%;
+    
+}
+.downbar{
+    position: fixed;
+    display: none;
+}
+h3{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.701);
+    position: relative;
+    font-family: 'Medula One', cursive;
+    font-size: 200%;
+
+}
+.profilepost{
+    z-index: 100%;
+    position: relative;
+    left: 30%;
+    display: grid;
+    grid-template-columns: repeat(3,32%);
+    grid-template-rows: repeat(5,auto);
+    gap: 2%;
+    height: auto;
+}
+.midcont{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+}
+.profile{
+    position: relative;
+    border-bottom: 0.0625em solid  #e6ecf0;
+    left: 26.7%;
+    width: 100%;    
+}
+@media (max-width: 900px) {
+    .feat {
+      display: none;
+    }
+    h1 {
+      display: none;
+    }
+    .downbar {
+      position: fixed;
+      display: flex;
+    }
+    .downbar img {
+      width: 30px;
+      height: 30px;
+    }
+    .main {
+      margin-left: -32%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .midcont {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+    .profilepost {
+      display: flex;
+      flex-direction: column;
+      gap: 2%;
+      width: 100%;
+      margin-left: 0;
+    }
+    .profile {
+      position: relative;
+      border-bottom: 0.0625em solid #e6ecf0;
+      width: 100%;
+      margin-left: 0;
+    }
+  }

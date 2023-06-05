@@ -1,24 +1,7 @@
 import styles from './card.css';
 
-export enum attribute {
-    "icon" = "icon",
-    "titulo" = "titulo"
-
-}
-
-class bestsale extends HTMLElement {
-    icon?: string;
-    titulo?: string;
-    
-    static get observedAttributes() {
-        const attrs: Record<attribute, null> = {
-        
-            icon: null,
-            titulo: null,
-        };
-        return Object.keys(attrs);
-    }
-    
+export default class profilebtn extends HTMLElement {
+      
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
@@ -27,30 +10,13 @@ class bestsale extends HTMLElement {
     connectedCallback() {
         this.render();
     }
-    
-    attributeChangedCallback(
-        propName: attribute,
-        _: string | undefined,
-        newValue: string | undefined
-        ) {
-            switch (propName) {
-                
-                default:
-                this[propName] = newValue;
-                break;
-            }
-            
-            this.render();
-        }
-        
-        render() {
+            render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-               <img src="${this.icon}">
-                <h2><a href="#">${this.titulo}</a></h2>
+               <img src="../../src/pics/user.png">
+                <h2><a href="#">Profile</a></h2>
                 </section>
-                <div><div>
                 `;
                 const css = this.ownerDocument.createElement("style");
                 css.innerHTML = styles;
@@ -59,5 +25,4 @@ class bestsale extends HTMLElement {
         }
     }
     
-customElements.define("best-sale", bestsale);
-export default bestsale;
+customElements.define("app-profilebtn", profilebtn);

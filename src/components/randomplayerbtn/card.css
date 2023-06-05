@@ -1,0 +1,59 @@
+    section{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+    img{
+
+            min-width: 20%;
+            max-width: 20%;
+            min-height: 20%;
+            max-height: 20%;
+    }
+
+    h2{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        color: aliceblue;
+        font-family: 'Fjalla One', sans-serif;
+    }
+    a{
+        text-decoration: none;
+        color: aliceblue;
+    }
+    h2:hover{
+        color:rgba(56, 0, 108, 0.693);
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+    a:hover{
+        color:rgba(56, 0, 108, 0.693);
+    }
+
+
+@media screen and (max-width: 400px){
+    @media screen and (max-width: 600px) {
+
+        section {
+        flex-direction: column;
+        align-items: center;
+        }
+        
+        img {
+        width: 50%;
+        height: auto;
+        margin-bottom: 1em;
+        }
+        
+        h2 {
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        }
+        
+        }
+}

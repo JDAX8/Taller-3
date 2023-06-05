@@ -1,3 +1,6 @@
+import { dispatch } from '../../store';
+import { navigate } from '../../store/action';
+import { Screens } from '../../types/navigations';
 import styles from './profile.css';
 
 export enum Attribute3 {
@@ -51,24 +54,64 @@ export default class profileApp extends HTMLElement {
         
         render() {
             if (this.shadowRoot) {
-                this.shadowRoot.innerHTML = `
-                <section>
-                <div class="user-info">
-                <img src="${this.image}">
-                <div class="name-and-game">
-                <h2>${this.name}</h2>
-                <p class="game-profile">${this.gameprofile}</p>
-                </div>
-                </div>
-                <p class="description">${this.description}</p>
-                </section>
-                `;
+                this.shadowRoot.innerHTML = ``;
+
+                const section = this.ownerDocument.createElement('section');
+                  
+                      const userInfo = this.ownerDocument.createElement('div');
+                      userInfo.classList.add('user-info');
+                  
+                      const image = this.ownerDocument.createElement('img');
+                      image.setAttribute('src', this.image || '');
+                  
+                      const nameAndGame = this.ownerDocument.createElement('div');
+                      nameAndGame.classList.add('name-and-game');
+                  
+                      const buttonContainer = this.ownerDocument.createElement('div');
+                      buttonContainer.classList.add('btn');
+                  
+                      const name = this.ownerDocument.createElement('h2');
+                      name.textContent = this.name || '';
+                  
+                      const editButton = this.ownerDocument.createElement('button');
+                      editButton.classList.add('edit');
+                      editButton.textContent = 'Edit profile';
+                      editButton.addEventListener("click", () =>{
+                        dispatch(navigate(Screens.EDITPROFILE))
+                    } )
+                  
+                      const gameProfile = this.ownerDocument.createElement('p');
+                      gameProfile.classList.add('game-profile');
+                      gameProfile.textContent = this.gameprofile || '';
+                  
+                      const description = this.ownerDocument.createElement('p');
+                      description.classList.add('description');
+                      description.textContent = this.description || '';
+                  
+                      buttonContainer.appendChild(name);
+                      buttonContainer.appendChild(editButton);
+                      nameAndGame.appendChild(buttonContainer);
+                      nameAndGame.appendChild(gameProfile);
+                      userInfo.appendChild(image);
+                      userInfo.appendChild(nameAndGame);
+                      section.appendChild(userInfo);
+                      section.appendChild(description);
+                  
+                      this.shadowRoot.innerHTML = '';
+                      this.shadowRoot.appendChild(section);
+                      
+                      const css = this.ownerDocument.createElement('style');
+                      css.innerHTML = styles;
+                      this.shadowRoot.appendChild(css);
+                
+                 
+                };
+                  
                 const css = this.ownerDocument.createElement("style");
                 css.innerHTML = styles;
                  this.shadowRoot?.appendChild(css);
                 
             }
         }
-    }
     
 customElements.define("profile-card", profileApp);

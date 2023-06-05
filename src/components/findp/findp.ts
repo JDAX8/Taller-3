@@ -13,7 +13,7 @@ export default class findpl extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML=` 
-        <section>
+        <section class="all">
             <img class ="icon" src="../../src/pics/fpicon.png" alt="Foto de usuario">
             <a href="#" class="btn-neon">
             <span id="span1"></span>
@@ -22,7 +22,8 @@ export default class findpl extends HTMLElement{
             <span id="span4"></span>
             FIND A GAMER PARTNER
         </a>
-        </section>`        
+        </section>
+        `        
         const css = this.ownerDocument.createElement("style");
             css.innerHTML = styles;
             this.shadowRoot?.appendChild(css);

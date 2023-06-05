@@ -1,4 +1,14 @@
+h2{
+  position: relative;
+  margin-bottom: 2%;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+}
+
 section {
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +18,51 @@ section {
     font-size: 130%;
     width: 100%;
   }
+  .edit{
+    font-family: 'Fjalla One', sans-serif;
+    position: relative;
+    left: 30%;
+    margin-top: 10%;
+    width: 180px;
+    height: 45px;
+    border-radius: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(4, 0, 110) 0%, rgba(89,9,121,1) 35%, rgb(70, 0, 89) 100%); 
+    transition-duration: .3s;
+    letter-spacing: 1.4px;
+  }
+  .edit:hover {
+    transform: scale(0.95);
+    transition-duration: .3s;
+  }
   
+  .edit::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 30%;
+     background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+    filter: blur(10px);
+    bottom: -3px;
+    z-index: -1;
+    transition-duration: .3s;
+  }
+  
+  .edit:hover::before {
+    bottom: -1px;
+    filter: blur(5px);
+    transition-duration: .3s;
+  }
   .user-info {
     display: flex;
     align-items: center;
@@ -39,6 +93,6 @@ section {
   
   .description {
     margin-left: 5%;
-    margin-top: 1em;
+    margin-top: 3em;
     text-align: justify;
   }

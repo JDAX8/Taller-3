@@ -1,0 +1,24 @@
+button {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: #811DA1;
+    color: white;
+    border-radius: 4px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-left: 55px;
+   
+   
+   }
+   
+   button:hover {
+    background: rgb(124, 3, 172);
+    background: linear-gradient(90deg, #811DA1 0%, rgba(811DA1) 100%);
+   }
+   
+   button:active {
+    transform: translate(0em, 0.2em);
+   }
