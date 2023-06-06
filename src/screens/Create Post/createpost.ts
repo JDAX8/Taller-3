@@ -88,9 +88,9 @@ export default class postpage extends HTMLElement {
                 button.addEventListener("click", () =>{
                         dispatch(Navigate(Screens.DASHBOARD))
                     } )
-                 button.addEventListener("click", () =>{
+                 button.addEventListener("click", async () =>{
                         console.log(userInputs);
-                        dispatch(SavePost(userInputs))
+                        dispatch( await SavePost(userInputs))
                     } )    
                 container.appendChild(button)
                 

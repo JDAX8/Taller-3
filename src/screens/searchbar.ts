@@ -6,7 +6,6 @@ import sgfydata from "../mocks/usdata";
 import unphdata from "../mocks/phonedata";
 
 
-import bestsale, { attribute } from "../components/bestS/index";
 import profileside, { Attribut } from "../components/Side-profile/index";
 import sugesforyou, { Attri } from "../components/sgfy/index";
 import underph, {attr} from "../components/undercell/index";
@@ -15,23 +14,13 @@ import underph, {attr} from "../components/undercell/index";
 
 class sbscreen extends HTMLElement{
 
-    dbs:bestsale[]=[];
     psb:profileside[]=[];
     sgfy:sugesforyou [] = [];
     unph:underph[]=[];
 
     constructor(){
         super()
-        this.attachShadow({mode:"open"})
-
-        dbsdata.forEach((person) => {
-            const cards = this.ownerDocument.createElement(
-                "best-sale"
-                ) as bestsale;
-                cards.setAttribute(attribute.titulo, person.title);
-                cards.setAttribute(attribute.icon, person.icon);
-                this.dbs.push(cards);
-             });     
+        this.attachShadow({mode:"open"}) 
 
              psbdata.forEach((person) => {
                 const pside = this.ownerDocument.createElement(
@@ -75,10 +64,6 @@ class sbscreen extends HTMLElement{
             const h1element = this.ownerDocument.createElement("h1")
             h1element.textContent = `GAMERS XP`
             cards.appendChild(h1element)
-            this.dbs.forEach((featuredCards)   =>   {
-            cards.appendChild(featuredCards)
-            });
-           
 
             const pside = this.ownerDocument.createElement("section")
             pside.className = `side`

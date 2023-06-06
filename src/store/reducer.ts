@@ -2,27 +2,20 @@
   import { Actions } from "../types/store";
 
 
-
   export const reducer = (ac: Actions, State: AppState ): AppState => {
     const { action, payload } = ac; 
     
     switch (action) {
       case PostupAction.SAVE_POST:
-        State.Postt = {...State.Postt, payload};
+        State.Postt = [...State.Postt, payload];
         return State;
 
-        default:
-          return State;
-          
-      }
-
-
-      switch (action) {
         case NavigationActions.NAVIGATE:
           return {
             ...State,
             screen: payload,
         }
+        
         case AuthAction.LOGOUT: 
             return {
                 ...State , UserCredentials:""
@@ -44,3 +37,4 @@
     
       return State;
     };
+  
