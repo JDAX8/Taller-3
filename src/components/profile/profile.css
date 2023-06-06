@@ -1,4 +1,14 @@
+h2{
+  position: relative;
+  margin-bottom: 2%;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+}
+
 section {
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +18,51 @@ section {
     font-size: 130%;
     width: 100%;
   }
+  .edit{
+    font-family: 'Fjalla One', sans-serif;
+    position: relative;
+    left: 30%;
+    margin-top: 10%;
+    width: 180px;
+    height: 45px;
+    border-radius: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(4, 0, 110) 0%, rgba(89,9,121,1) 35%, rgb(70, 0, 89) 100%); 
+    transition-duration: .3s;
+    letter-spacing: 1.4px;
+  }
+  .edit:hover {
+    transform: scale(0.95);
+    transition-duration: .3s;
+  }
   
+  .edit::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 30%;
+     background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+    filter: blur(10px);
+    bottom: -3px;
+    z-index: -1;
+    transition-duration: .3s;
+  }
+  
+  .edit:hover::before {
+    bottom: -1px;
+    filter: blur(5px);
+    transition-duration: .3s;
+  }
   .user-info {
     display: flex;
     align-items: center;
@@ -39,6 +93,111 @@ section {
   
   .description {
     margin-left: 5%;
-    margin-top: 1em;
+    margin-top: 3em;
     text-align: justify;
+  }
+  @media (max-width: 400px) {
+    .post-container {
+      max-width: 50em;
+    }
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    padding: 1.25em;
+  }
+  
+  .user-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border:green solid 0.325em;
+  }
+  
+  @media (max-width: 576px) {
+    .user-info img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+  .user-info{
+    margin-bottom: -8%;
+  }
+  .game-profile {
+    margin-top: 3%;
+    color: aliceblue;
+  }
+  
+  .user-text h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #931EB4;
+  }
+  .user-text h2:hover {
+    color:rgba(56, 0, 108, 0.693);
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 576px) {
+    .user-text h2 {
+      font-size: 24px;
+    }
+  }
+  
+  .user-text p {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 576px) {
+    .user-text p {
+      font-size: 16px;
+    }
+  }
+  
+  .post-image {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  @media (max-width: 576px) {
+    .post-image {
+      max-width: 400px;
+    }
+  }
+  
+  .post-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .post-buttons button {
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #27abab;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .post-buttons button:hover {
+    background-color: #12c2bf;
+  }
+  
+  @media (max-width: 576px) {
+    .post-buttons button {
+      padding: 8px;
+      margin: 0 5px;
+      font-size: 14px;
+    }
+  }
+  
+  ::-webkit-scrollbar{
+    overflow-y: none;
   }

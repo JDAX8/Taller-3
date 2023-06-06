@@ -1,0 +1,20 @@
+/* Estilos base */
+.big {
+  margin-top: 10%;
+}
+
+/* Estilos para pantallas pequeñas (hasta 767px) */
+@media screen and (max-width: 767px) {
+  .big {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas (hasta 400px) */
+@media screen and (max-width: 400px) {
+  .big {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}

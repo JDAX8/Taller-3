@@ -1,3 +1,4 @@
+import { appState } from '../../store';
 import styles from './scard.css';
 
 export enum Attribut {
@@ -50,10 +51,10 @@ class profileside extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-               <img src="${this.image}">
+               <img src="${appState.User.image}">
                <section class = "nameandsec">
-                <h2>${this.name}</h2>
-                <p class = "desc"> ${this.gameprofile}</p>
+                <h2>${appState.User.name}</h2>
+                <p class = "desc"> ${appState.User.gameprofile}</p>
                 </section>
                 </section>
                 `;

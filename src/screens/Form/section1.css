@@ -79,3 +79,36 @@ h4{
 .Notaccount:hover{
     cursor: pointer;
 }
+@media only screen and (max-width: 768px) {
+    .section1{
+        background: linear-gradient(#A11FC1ff, #231843ff);
+        border-radius: 8px;
+        margin-top: 4%;
+        max-width: 80%;
+        min-width: 80%;
+        max-height: 1%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10%;
+        
+    }
+
+    .logo{
+        position: absolute;
+        width: 20%;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 70% ;
+        margin-top: 5%;
+    
+    }
+    h2{
+        color: white;
+        margin-top: -1%;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 150%;
+        margin-left: 10%;
+    }
+}

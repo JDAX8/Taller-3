@@ -5,17 +5,14 @@ import psbdata from "../../mocks/psb";
 import trips from "../../mocks/trips";
 import sgfydata from "../../mocks/usdata";
 import unphdata from "../../mocks/phonedata";
-import Trips from "../../services/fetch";
-
-
+import Trips from "../../services/fetch"
 
 
 import profileside, { Attribut } from "../../components/Side-profile/index";
 import PostCard, { Attribute1 } from "../../components/PostCard/post";
 import sugesforyou, { Attri } from "../../components/sgfy/index";
 import underph, {attr} from "../../components/undercell/index";
-import { Screens } from '../../types/navigations';
-import { navigate } from '../../store/action';
+import { Navigate } from '../../store/actions';
 import { dispatch } from '../../store/index';
 
 
@@ -62,6 +59,7 @@ class DashBoard extends HTMLElement {
                              this.unph.push(under);
                         });       
         }
+        
 
         
         async connectedCallback() {
@@ -84,49 +82,8 @@ class DashBoard extends HTMLElement {
         render() {
             if (this.shadowRoot) {
 
-                const newpostbtn = this.ownerDocument.createElement("app-newpost")
-                newpostbtn.className = 'cards'
-                newpostbtn.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.DASHBOARD))
-                } )
-
-                const cards = this.ownerDocument.createElement("section")
-                cards.className = `feat`
-                const h1element = this.ownerDocument.createElement("h1")
-                h1element.textContent = `GAMERS XP`
-                cards.appendChild(h1element)
-                
-                h1element.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.DASHBOARD))
-                } )
-    
-    
-                const profilebtn = this.ownerDocument.createElement("app-profilebtn")
-                profilebtn.className = 'cards'  
-                profilebtn.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.PROFILESCREEN))
-                } )
-    
-               
-    
-    
-                const searchbtn = this.ownerDocument.createElement("app-searchbtn")
-                searchbtn.className = 'cards'
-                searchbtn.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.SEARCHBAR))
-                } )
-    
-    
-                const randomp = this.ownerDocument.createElement("app-rpbtn")
-                randomp.className = 'cards'
-                randomp.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.FINDPLAYER))
-                } )
-    
-                cards.appendChild(newpostbtn)
-                cards.appendChild(profilebtn)
-                cards.appendChild(searchbtn)
-                cards.appendChild(randomp)
+                const cards = this.ownerDocument.createElement("app-leftbar")
+                cards.className = 'cards'
 
                 const pside = this.ownerDocument.createElement("section")
                 pside.className = `side`

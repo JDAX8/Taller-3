@@ -1,0 +1,172 @@
+.big{
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ margin-left: 30%;
+ margin-right: 30%;
+ box-shadow: 0 15px 25px rgba(0,0,0,.6);
+ margin-top: 10%;
+}
+
+.logo{
+  
+  max-width: 10%;
+  min-width: 10%;
+  max-height: 10%;
+  min-height: 10%;
+  
+}
+
+h2{
+  text-align: center;
+  font-size: x-large;
+  margin-top: -15%;
+  font-family: 'Fjalla One', sans-serif;
+
+}
+
+h3{
+  text-align: center;
+  font-size: x-large;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+  margin-left: 15%;
+}
+
+input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+button{
+  margin-top: 14%;
+  margin-left: 17%;
+  width: 180px;
+  height: 45px;
+  border-radius: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+  transition-duration: .3s;
+  letter-spacing: 1.4px;
+}
+
+
+
+button:hover {
+transform: scale(0.95);
+transition-duration: .3s;
+}
+
+button::before {
+content: "";
+position: absolute;
+width: 80%;
+height: 30%;
+ background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+filter: blur(10px);
+bottom: -3px;
+z-index: -1;
+transition-duration: .3s;
+}
+
+button:hover::before {
+bottom: -1px;
+filter: blur(5px);
+transition-duration: .3s;
+}
+
+
+@media (max-width: 767px) {
+
+  .big{
+  
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   margin-left: 3%;
+   width: 80vw ;
+  height: 154.8vw ;
+   box-shadow: 0 15px 25px rgba(0,0,0,.6);
+   margin-top: 25%;
+   position: absolute;
+  }
+  
+  h2{
+  font-size: xx-large;
+  margin-top: 7%;
+  font-family: 'Fjalla One', sans-serif;
+  }
+  button{
+  margin-top: 8%;
+  width: 180px;
+  height: 45px;
+  border-radius: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+  transition-duration: .3s;
+  letter-spacing: 1.4px;
+  }
+  
+  
+  
+  button:hover {
+  transform: scale(0.95);
+  transition-duration: .3s;
+  }
+  
+  button::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 35%, rgba(199,0,255,1) 100%); 
+  filter: blur(10px);
+  bottom: -3px;
+  z-index: -1;
+  transition-duration: .3s;
+  }
+  
+  button:hover::before {
+  bottom: -1px;
+  filter: blur(5px);
+  transition-duration: .3s;
+  }
+  }

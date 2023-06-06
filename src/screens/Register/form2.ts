@@ -2,8 +2,7 @@ import styles from "./register.css"
 import  { att } from "../../components/btnregis/buttonregis";
 import "../../components/export"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
 
 
 export class FormReg extends HTMLElement {
@@ -52,31 +51,10 @@ export class FormReg extends HTMLElement {
                 mini.appendChild(ima)
             
                 const yourname = this.ownerDocument.createElement("but-regis")
-                yourname.setAttribute(att.placeholder, "Your name")
-                yourname.setAttribute(att.type, "user")
+                this.shadowRoot?.appendChild(yourname)
                 container.appendChild(yourname)
 
-                const email = this.ownerDocument.createElement("but-regis")
-                email.setAttribute(att.placeholder, "Your e-mail")
-                email.setAttribute(att.type, "email")
-                container.appendChild(email)
-
-                const password = this.ownerDocument.createElement("but-regis")
-                password.setAttribute(att.placeholder, "password")
-                password.setAttribute(att.type, "password")
-                container.appendChild(password)
-
-                const confirmpassword = this.ownerDocument.createElement("but-regis")
-                confirmpassword.setAttribute(att.placeholder, "Confirm password")
-                confirmpassword.setAttribute(att.type, "password")
-                container.appendChild(confirmpassword)
-
-                const button = this.ownerDocument.createElement("btn-account");
-                button.addEventListener("click", () =>{
-                    button.className="btn-signup"
-                        dispatch(navigate(Screens.DASHBOARD))
-                    } )
-                container.appendChild(button)
+                
                 
                 this.shadowRoot?.appendChild(containerg)
         

@@ -3,8 +3,8 @@ import "../../components/export"
 import "../../components/buttonlanding2/buttonlogin"
 import "../../components/buttonlanding/buttonlanding"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 export class LandReg extends HTMLElement {
     
@@ -38,15 +38,16 @@ export class LandReg extends HTMLElement {
                 const button = this.ownerDocument.createElement("btn-accoun");
                 button.addEventListener("click", () =>{
                 button.className="btn-signup"
-                    dispatch(navigate(Screens.REGISTER))
+                    dispatch(Navigate(Screens.REGISTER))
                 } )
                 container.appendChild(button)
             
                  
 
                  const but = this.ownerDocument.createElement("button-log");
+                 but.className="but"
                  but.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.LOGIN))
+                    dispatch(Navigate(Screens.LOGIN))
                 } )
                  container.appendChild(but)
 
