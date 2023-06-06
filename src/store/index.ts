@@ -10,7 +10,7 @@ import storage, { PersistanceKeys } from "../utils/storage";
 
 const emptyState = {
   Postt: [],
-    screen: Screens.SHARE,
+    screen: Screens.LOGIN,
     user: {
       name: "",
       image: "",
