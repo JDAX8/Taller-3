@@ -4,8 +4,24 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, se
 import { dispatch } from "../store";
 import { navigate } from "../store/action";
 import { Screens } from "../types/navigations";
+import { Postt } from "../types/Postt";
+import { getFirestore, collection, addDoc } from "firebase/firestore"
+
 
 const app = initializeApp(firebaseconfig);
+const db = getFirestore(app);
+
+const savePostInDB = async (Postt: Postt) => {
+  try{
+   await addDoc(collection(db,"Postt"), Postt);
+   
+  } catch (e) {
+      console.error("Error adding document: ", e);
+  }
+
+};
+
+
 export const auth = getAuth(app);
 
 const UserRegister = async ({
@@ -52,4 +68,4 @@ const UserRegister = async ({
     
   };
 
-  export default {UserRegister, Userlogin};
+  export default {UserRegister, Userlogin, savePostInDB};

@@ -7,7 +7,8 @@ import { auth } from "../utils/firebase";
 import { navigate, setUserCredentials } from "./action";
 
 const emptyState = {
-    screen: Screens.LANDING,
+  Postt: [],
+    screen: Screens.SHARE,
     user: {
       name: "",
       image: "",
@@ -36,7 +37,7 @@ const emptyState = {
   
   export const dispatch = (action: any) => {
     const clone = JSON.parse(JSON.stringify(appState));
-    const newState = reducer(action, clone);
+    const newState = reducer(action, clone,);
     appState = newState;
     notifyObservers();
   };
