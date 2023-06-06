@@ -6,7 +6,7 @@ export type Observer = { render: () => void } & HTMLElement;
 
 export type Appstate= {
     user: user | null,
-    post: trip []
+    post: trip [],
     Postt: Postt []
 }
 

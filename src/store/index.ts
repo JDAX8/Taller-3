@@ -1,10 +1,12 @@
 
 import { onAuthStateChanged } from "firebase/auth";
 import { Screens } from "../types/navigations"
-import { Observer } from "../types/store";
+import { Appstate, Observer } from "../types/store";
 import { reducer } from "./reducer";
 import { auth } from "../utils/firebase";
 import { navigate, setUserCredentials } from "./action";
+import storage, { PersistanceKeys } from "../utils/storage";
+
 
 const emptyState = {
   Postt: [],
