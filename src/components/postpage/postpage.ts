@@ -1,8 +1,8 @@
 import styles from "./createpost.css"
 import "../../components/export"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 
 export default class postpage extends HTMLElement {
@@ -70,7 +70,7 @@ export default class postpage extends HTMLElement {
                 const button = this.ownerDocument.createElement("button");
                 button.innerText = "Sube tu post"
                 button.addEventListener("click", () =>{
-                        dispatch(navigate(Screens.DASHBOARD))
+                        dispatch(Navigate(Screens.DASHBOARD))
                     } )
                 container.appendChild(button)
                 

@@ -13,11 +13,16 @@ class BtnLog extends HTMLElement {
     
         render() {
             if (this.shadowRoot) {
-                this.shadowRoot.innerHTML = `
-                <section>
-                <button> Log in</button>
-                </section>
-                `;
+                this.shadowRoot.innerHTML = ``;
+
+                const sec = this.ownerDocument.createElement("section")
+
+                const btn = this.ownerDocument.createElement("button")
+                btn.textContent="Log in"
+
+                sec.appendChild(btn)
+
+                this.shadowRoot.appendChild(sec)
             }
         }
     }

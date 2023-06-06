@@ -6,8 +6,8 @@ import  { attr } from "../../components/butemailandpass/emailandpass";
 import "../../components/buttonlogin/buttlogin"
 import "../../components/butemailandpass/emailandpass"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 
 
@@ -55,14 +55,7 @@ export class FormLog extends HTMLElement {
                 logo.src="../../../src/pics/Logito.png"
                 logo.className = "logo"
                 container.appendChild(logo)
-
-
-                // pdata.forEach((dat) => {
-                //     const buttonsess = this.ownerDocument.createElement("btn-sec");          
-                //     buttonsess.setAttribute(Attribut.name, dat.name)
-                //     container.appendChild(buttonsess)
-                // })
-      
+                
                 const email = this.ownerDocument.createElement("email-pass")
                 
                 container.appendChild(email)
@@ -82,6 +75,7 @@ export class FormLog extends HTMLElement {
                  Notregis.innerText = "Not registered yet?"
                  Notregis.className = "Notregis"
                  container.appendChild(Notregis)
+                 
 
                  const Notaccount = this.ownerDocument.createElement("h5")
                  Notaccount.innerText = "Create an Account"
@@ -89,7 +83,7 @@ export class FormLog extends HTMLElement {
                  container.appendChild(Notaccount)
                  Notaccount.addEventListener("click", () =>{
                  Notaccount.className="btn-signup"
-                    dispatch(navigate(Screens.REGISTER))
+                    dispatch(Navigate(Screens.REGISTER))
                 } )
                  
                 

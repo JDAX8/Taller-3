@@ -1,9 +1,9 @@
 import styles from "./createpost.css"
 import "../../components/export"
 import { dispatch } from "../../store/index";
-import { navigate, savePost } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate, SavePost, } from "../../store/actions";
 import { Postt } from "../../types/Postt";
+import { Screens } from "../../types/store";
 
 const userInputs: Postt = {
 
@@ -51,7 +51,6 @@ export default class postpage extends HTMLElement {
                 titulos.placeholder = "Escribe el título del Post"
                 titulos.type = "text"
                 titulos.addEventListener("changes", (e: any) =>{
-                    console.log(e.target.value)
                     userInputs.titulos = e.target.value
                 } )
                 this.shadowRoot?.appendChild (titulos);
@@ -65,7 +64,6 @@ export default class postpage extends HTMLElement {
                 descs.placeholder = "Descripción de tu post"
                 descs.type = "text"
                 descs.addEventListener("changes", (e: any) =>{
-                    console.log(e.target.value)
                     userInputs.descs = e.target.value
                 } )
                 this.shadowRoot?.appendChild (descs);
@@ -79,7 +77,6 @@ export default class postpage extends HTMLElement {
                 url.placeholder = "Pega el url"
                 url.type = "url"
                 url.addEventListener("changes", (e: any) =>{
-                    console.log(e.target.value)
                     userInputs.url = e.target.value
                 } )
                 this.shadowRoot?.appendChild (url);
@@ -89,11 +86,11 @@ export default class postpage extends HTMLElement {
                 const button = this.ownerDocument.createElement("button");
                 button.innerText = "Sube tu post"
                 button.addEventListener("click", () =>{
-                        dispatch(navigate(Screens.DASHBOARD))
+                        dispatch(Navigate(Screens.DASHBOARD))
                     } )
                  button.addEventListener("click", () =>{
                         console.log(userInputs);
-                        dispatch(savePost(userInputs))
+                        dispatch(SavePost(userInputs))
                     } )    
                 container.appendChild(button)
                 

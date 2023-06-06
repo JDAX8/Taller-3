@@ -1,6 +1,6 @@
 import { appState, dispatch } from "../../store";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Logout, Navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 import styles from "./leftbar.css"
 
 export default class leftbar extends HTMLElement{
@@ -13,10 +13,10 @@ export default class leftbar extends HTMLElement{
    connectedCallback(){
        this.render()
    }
-   logOutUser() {
-    if(appState.user !== null || ''){
+   logoutUser() {
+    if(appState.User !== null || ''){
         sessionStorage.clear();
-        dispatch(navigate(Screens.LANDING));
+        dispatch(Navigate(Screens.LANDING));
         location.reload();
     }
 }
@@ -27,7 +27,7 @@ export default class leftbar extends HTMLElement{
            const newpostbtn = this.ownerDocument.createElement("app-newpost")
                 newpostbtn.className = 'cards'
                 newpostbtn.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.DASHBOARD))
+                    dispatch(Navigate(Screens.DASHBOARD))
                 } )
 
            const cards = this.ownerDocument.createElement("section")
@@ -37,44 +37,39 @@ export default class leftbar extends HTMLElement{
            cards.appendChild(h1element)
            
            h1element.addEventListener("click", () =>{
-               dispatch(navigate(Screens.DASHBOARD))
+               dispatch(Navigate(Screens.DASHBOARD))
            } )
 
 
            const profilebtn = this.ownerDocument.createElement("app-profilebtn")
            profilebtn.className = 'cards'  
            profilebtn.addEventListener("click", () =>{
-               dispatch(navigate(Screens.PROFILESCREEN))
+               dispatch(Navigate(Screens.PROFILESCREEN))
            } )
-
-          
-
 
            const searchbtn = this.ownerDocument.createElement("app-searchbtn")
            searchbtn.className = 'cards'
            searchbtn.addEventListener("click", () =>{
-               dispatch(navigate(Screens.SEARCHBAR))
+               dispatch(Navigate(Screens.SEARCHBAR))
            } )
 
 
            const randomp = this.ownerDocument.createElement("app-rpbtn")
            randomp.className = 'cards'
            randomp.addEventListener("click", () =>{
-               dispatch(navigate(Screens.FINDPLAYER))
+               dispatch(Navigate(Screens.FINDPLAYER))
            } )
            const createpost = this.ownerDocument.createElement("app-createpost")
            createpost.className = 'cards'
            createpost.addEventListener("click", () =>{
-               dispatch(navigate(Screens.SHARE))
+               dispatch(Navigate(Screens.SHARE))
            } )
 
             const logout = this.ownerDocument.createElement("app-logout")
             logout.className = 'cards'
-            logout.addEventListener("click", this.logOutUser)
-
-
-           
-
+            logout.addEventListener("click", ()=>{
+                dispatch(Logout())
+             })            
            cards.appendChild(newpostbtn)
            cards.appendChild(profilebtn)
            cards.appendChild(searchbtn)

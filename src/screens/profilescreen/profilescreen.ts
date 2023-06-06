@@ -13,8 +13,7 @@ import profilepost, { Attribute2 } from "../../components/profilepost/Ppost";
 import profileApp, { Attribute3 } from "../../components/profile/profile"
 import underph, {attr} from "../../components/undercell/index";
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
 
 
 

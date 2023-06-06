@@ -2,8 +2,7 @@ import styles from "./register.css"
 import  { att } from "../../components/btnregis/buttonregis";
 import "../../components/export"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate } from "../../store/actions";
 
 
 export class FormReg extends HTMLElement {

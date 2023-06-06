@@ -10,7 +10,7 @@ import "./screens/Create Post/createpost"
 import "./screens/editprofile/editprofile"
 
 import { addObserver, appState } from "./store/index"
-import { Screens } from "./types/navigations"
+import { Screens } from "./types/store";
 
 class AppContainer extends HTMLElement {
     constructor(){

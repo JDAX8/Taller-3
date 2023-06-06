@@ -40,3 +40,68 @@ button {
     box-shadow: none;
     transform: translateY(0);
    }
+   @media (max-width: 576px) {
+    .user-info img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+  .user-info{
+    margin-bottom: -8%;
+  }
+  .game-profile {
+    margin-top: 3%;
+    color: aliceblue;
+  }
+  
+  .user-text h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #931EB4;
+  }
+  .user-text h2:hover {
+    color:rgba(56, 0, 108, 0.693);
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 576px) {
+  
+  }
+  
+  @media (max-width: 576px) {
+  }
+  
+  @media (max-width: 576px) {
+    button{
+        appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #ffffff;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    }
+  }
+  
+  @media (max-width: 576px) {
+
+  }

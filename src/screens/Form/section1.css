@@ -79,7 +79,6 @@ h4{
 .Notaccount:hover{
     cursor: pointer;
 }
-
 @media only screen and (max-width: 768px) {
     .section1{
         background: linear-gradient(#A11FC1ff, #231843ff);

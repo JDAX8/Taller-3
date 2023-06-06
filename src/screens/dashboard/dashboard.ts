@@ -12,8 +12,7 @@ import profileside, { Attribut } from "../../components/Side-profile/index";
 import PostCard, { Attribute1 } from "../../components/PostCard/post";
 import sugesforyou, { Attri } from "../../components/sgfy/index";
 import underph, {attr} from "../../components/undercell/index";
-import { Screens } from '../../types/navigations';
-import { navigate } from '../../store/action';
+import { Navigate } from '../../store/actions';
 import { dispatch } from '../../store/index';
 
 

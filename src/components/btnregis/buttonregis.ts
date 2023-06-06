@@ -1,12 +1,17 @@
 import styles from "./input.css";
 import Firebase from "../../utils/firebase"
 import { dispatch } from "../../store";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { Navigate, newUser } from "../../store/actions";
+import firebase from "../../utils/firebase";
+import { users } from "../../types/user";
 
-const users = {
+const credentials: users = {
+    uid: "123",
     name: "",
-    email:"",
+    image: "https://t3.ftcdn.net/jpg/00/64/67/80/360_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg",
+    email: "",
+    description: "",
+    gameprofile: "",
     password: "",
 };
 export enum att {
@@ -52,8 +57,14 @@ attributeChangedCallback(
         this.render();
     }
 
-    async Funfiree(){
-        Firebase.UserRegister(users)
+    async RegisterNewUser(){
+        dispatch(newUser(credentials))
+
+        if(await Firebase.UserRegister(credentials)  == true){
+          
+          await Firebase.Adduser(credentials)
+        }
+        console.log(credentials);
     }
 
     render(){
@@ -67,7 +78,7 @@ attributeChangedCallback(
             name.type = "Name"
             name.addEventListener(
                 "change",
-                (e: any) => (users.name = e.target.value)
+                (e: any) => (credentials.name = e.target.value)
               );
 
             const lemail = this.ownerDocument.createElement('label');
@@ -77,7 +88,7 @@ attributeChangedCallback(
             email.type = "Email"
             email.addEventListener(
                 "change",
-                (e: any) => (users.email = e.target.value)
+                (e: any) => (credentials.email = e.target.value)
               );
 
             const lpassword = this.ownerDocument.createElement('label');
@@ -87,7 +98,7 @@ attributeChangedCallback(
             password.type = "Password"
             password.addEventListener(
                 "change",
-                (e: any) => (users.password = e.target.value)
+                (e: any) => (credentials.password = e.target.value)
               );
 
             const Cpassword = this.ownerDocument.createElement('label');
@@ -97,13 +108,14 @@ attributeChangedCallback(
             CCpassword.type = "Password"
             CCpassword.addEventListener(
                 "change",
-                (e: any) => (users.password = e.target.value)
+                (e: any) => (credentials.password = e.target.value)
               );
             
               const button = this.ownerDocument.createElement('button')
               button.innerText = "Create account"
-              button.addEventListener("click", () =>{
-                button.addEventListener("click", this.Funfiree)    
+              button.addEventListener("click", async () =>{
+                console.log(credentials)
+                this.RegisterNewUser()
                   } )
                   
               

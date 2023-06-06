@@ -1,48 +1,64 @@
 
-import { onAuthStateChanged } from "firebase/auth";
-import { Screens } from "../types/navigations"
-import { Appstate, Observer } from "../types/store";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { AppState, Observer, Screens, Actions} from "../types/store";
 import { reducer } from "./reducer";
-import { auth } from "../utils/firebase";
-import { navigate, setUserCredentials } from "./action";
-import storage, { PersistanceKeys } from "../utils/storage";
+import { initializeApp } from "firebase/app";
+import { Navigate, setUserCredentials } from "./actions";
+import Storage, { PersistanceKeys } from "../utils/storage";
+import firebaseconfig from "../utils/firebaseconfig";
 
-
-const emptyState = {
+const emptyState: AppState = {
   Postt: [],
-    screen: Screens.LOGIN,
-    user: {
-      name: "",
-      image: "",
-      description: "",
-      gameprofile: "",
-      email: "",
-      uid: "",
-    },
-    post:[],
-    users: [],
-  };
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
-      dispatch(navigate(Screens.DASHBOARD));
-    } else {
-      dispatch(navigate(Screens.LANDING));
-    }
-  });
+  User: {
+    name: "",
+    image: "",
+    description: "",
+    gameprofile: "",
+    email: "",
+    uid: "",
+    password: "",
+  },
+  screen: Screens.LANDING,
+  post: [],
+  UserCredentials: "",
+};
+
+
+const app = initializeApp(firebaseconfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, async(u:any) => {
   
-  export let appState = emptyState;
+  if (await (u)) {
+    u !== null ? (setUserCredentials(u)) : '';
+    appState.User.uid = u.uid
+    dispatch(Navigate(Screens.DASHBOARD));
+  } else {
+    dispatch(Navigate(Screens.LANDING));
+  }
+});
   
+export let appState = Storage.get<AppState>({
+  key: PersistanceKeys.STORE,
+  defaultValue: emptyState,
+});
+
   let observers: Observer[] = [];
   
   const notifyObservers = () => observers.forEach((o) => o.render());
   
-  export const dispatch = (action: any) => {
-    const clone = JSON.parse(JSON.stringify(appState));
-    const newState = reducer(action, clone,);
-    appState = newState;
-    notifyObservers();
-  };
+
+  const persistStore = (state: AppState) =>
+  Storage.set({ key: PersistanceKeys.STORE, value: state });
+
+ export const dispatch = (action: Actions) => {
+  const clone = JSON.parse(JSON.stringify(appState));
+  const newState = reducer(action, clone);
+  appState = newState;
+
+  persistStore(newState);
+  notifyObservers();
+};
   
   export const addObserver = (ref: Observer) => {
     observers = [...observers, ref];

@@ -1,10 +1,9 @@
 import styles from "./input.css"
 import Firebase from "../../utils/firebase"
-import { dispatch } from "../../store";
-import { navigate } from "../../store/action";
-import { Screens } from "../../types/navigations";
+import { addObserver, dispatch } from "../../store";
+import { Navigate, UserLogin } from "../../store/actions";
 
-const Valuser = {
+const credentials = {
     email:"",
     password: "",
 };
@@ -45,14 +44,16 @@ attributeChangedCallback(
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        addObserver(this)
     }
 
     connectedCallback(){
         this.render();
     }
-
+    
     async Funfire(){
-        await Firebase.Userlogin(Valuser)
+        await Firebase.Userlogin(credentials);
+        dispatch(await UserLogin())
     }
 
 
@@ -74,7 +75,7 @@ attributeChangedCallback(
             
             log.addEventListener(
                 "change",
-                (e: any) => (Valuser.email = e.target.value)
+                (e: any) => (credentials.email = e.target.value)
               );
             this.shadowRoot?.appendChild(log)
 
@@ -87,19 +88,18 @@ attributeChangedCallback(
             passw.type = "Password"
             passw.addEventListener(
                 "change",
-                (e: any) => (Valuser.password = e.target.value)
+                (e: any) => (credentials.password = e.target.value)
               );
             this.shadowRoot?.appendChild(passw)
 
             const button= this.ownerDocument.createElement("button");
-            button.innerText = "Iniciar sesión"
-            button.addEventListener("click", this.Funfire)    
+            button.innerText = "Log in  "
+            button.addEventListener("click", this.Funfire)
+             
             button.addEventListener("click", () =>{
                 button.className="btn-signup"
             } )
             this.shadowRoot?.appendChild(button)
-
-
         }
     }
 
