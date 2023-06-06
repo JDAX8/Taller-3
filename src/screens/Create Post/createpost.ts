@@ -1,9 +1,16 @@
 import styles from "./createpost.css"
 import "../../components/export"
 import { dispatch } from "../../store/index";
-import { navigate } from "../../store/action";
+import { navigate, savePost } from "../../store/action";
 import { Screens } from "../../types/navigations";
+import { Postt } from "../../types/Postt";
 
+const userInputs: Postt = {
+
+    titulos: "",
+    descs: "",
+    url: "",
+};
 
 export default class postpage extends HTMLElement {
     
@@ -43,6 +50,10 @@ export default class postpage extends HTMLElement {
                 const titulos = this.ownerDocument.createElement("input")
                 titulos.placeholder = "Escribe el título del Post"
                 titulos.type = "text"
+                titulos.addEventListener("changes", (e: any) =>{
+                    console.log(e.target.value)
+                    userInputs.titulos = e.target.value
+                } )
                 this.shadowRoot?.appendChild (titulos);
                 container.appendChild(titulos)
                 
@@ -53,6 +64,10 @@ export default class postpage extends HTMLElement {
                 const descs = this.ownerDocument.createElement("input")
                 descs.placeholder = "Descripción de tu post"
                 descs.type = "text"
+                descs.addEventListener("changes", (e: any) =>{
+                    console.log(e.target.value)
+                    userInputs.descs = e.target.value
+                } )
                 this.shadowRoot?.appendChild (descs);
                 container.appendChild(descs)
 
@@ -63,6 +78,10 @@ export default class postpage extends HTMLElement {
                 const url = this.ownerDocument.createElement("input")
                 url.placeholder = "Pega el url"
                 url.type = "url"
+                url.addEventListener("changes", (e: any) =>{
+                    console.log(e.target.value)
+                    userInputs.url = e.target.value
+                } )
                 this.shadowRoot?.appendChild (url);
                 container.appendChild(url)
 
@@ -72,6 +91,10 @@ export default class postpage extends HTMLElement {
                 button.addEventListener("click", () =>{
                         dispatch(navigate(Screens.DASHBOARD))
                     } )
+                 button.addEventListener("click", () =>{
+                        console.log(userInputs);
+                        dispatch(savePost(userInputs))
+                    } )    
                 container.appendChild(button)
                 
                 this.shadowRoot?.appendChild(containerg)
