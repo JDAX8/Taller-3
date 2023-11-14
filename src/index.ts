@@ -12,7 +12,7 @@ import "./screens/editprofile/editprofile"
 import { addObserver, appState } from "./store/index"
 import { Screens } from "./types/store";
 
-class AppContainer extends HTMLElement {
+export default class AppContainer extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
